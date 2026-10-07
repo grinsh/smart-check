@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>לומדים בקצב שלי - דף הבית</title>
+</head>
+<body style="margin:0; padding:0; font-family:'Segoe UI', Arial, sans-serif; background-color:#f4f7fb; color:#1f2a44; line-height:1.6;">
+
+  <!-- סרגל עליון -->
+  <header style="background-color:#ffffff; box-shadow:0 2px 8px rgba(0,0,0,0.06); position:sticky; top:0; z-index:10;">
+    <div style="max-width:1100px; margin:0 auto; padding:14px 20px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+      <div style="font-size:24px; font-weight:800; color:#2b59c3;">
+        📘 לומדים <span style="color:#f5a623;">בקצב שלי</span>
+      </div>
+      <nav style="display:flex; gap:18px; flex-wrap:wrap;">
+        <a href="#" style="color:#1f2a44; text-decoration:none; font-weight:600;">דף הבית</a>
+        <a href="#courses" style="color:#1f2a44; text-decoration:none; font-weight:600;">מסלולים</a>
+        <a href="#how" style="color:#1f2a44; text-decoration:none; font-weight:600;">איך זה עובד</a>
+        <a href="#register" style="color:#ffffff; background-color:#2b59c3; padding:6px 16px; border-radius:20px; text-decoration:none; font-weight:600;">הרשמה</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- אזור פתיחה + טופס הרשמה -->
+  <section style="background:linear-gradient(135deg, #2b59c3 0%, #4a7bea 100%); color:#ffffff; padding:60px 20px;">
+    <div style="max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; gap:40px;">
+
+      <!-- טקסט פתיחה -->
+      <div style="flex:1 1 420px;">
+        <h1 style="font-size:42px; line-height:1.2; margin:0 0 16px 0;">ללמוד מתי שנוח לך,<br>איפה שנוח לך</h1>
+        <p style="font-size:19px; margin:0 0 24px 0; opacity:0.95;">
+          פלטפורמה ללמידה עצמית עם שיעורים מוקלטים, תרגולים אינטראקטיביים ומעקב התקדמות אישי.
+        </p>
+        <ul style="list-style:none; padding:0; margin:0 0 28px 0; font-size:17px;">
+          <li style="margin-bottom:8px;">✔ גישה מלאה לחומרי הלימוד 24/7</li>
+          <li style="margin-bottom:8px;">✔ תרגילים עם משוב מיידי</li>
+          <li style="margin-bottom:8px;">✔ תעודת סיום לכל מסלול</li>
+        </ul>
+        <div style="display:flex; gap:30px; flex-wrap:wrap;">
+          <div><div style="font-size:30px; font-weight:800;">120+</div><div style="opacity:0.85;">שיעורים</div></div>
+          <div><div style="font-size:30px; font-weight:800;">15</div><div style="opacity:0.85;">מסלולי לימוד</div></div>
+          <div><div style="font-size:30px; font-weight:800;">500+</div><div style="opacity:0.85;">תרגילים</div></div>
+        </div>
+      </div>
+
+      <!-- טופס הרשמה -->
+      <div id="register" style="flex:1 1 360px; max-width:420px; background-color:#ffffff; color:#1f2a44; border-radius:16px; padding:30px; box-shadow:0 12px 30px rgba(0,0,0,0.18);">
+        <h2 style="margin:0 0 6px 0; font-size:26px; color:#2b59c3; text-align:center;">הרשמה חינם</h2>
+        <p style="margin:0 0 20px 0; text-align:center; color:#6b7280; font-size:15px;">מלאו את הפרטים והתחילו ללמוד עוד היום</p>
+
+        <form id="signupForm" onsubmit="return handleSignup(event)" novalidate>
+          <label for="fullName" style="display:block; font-weight:600; margin-bottom:4px; font-size:14px;">שם מלא</label>
+          <input id="fullName" type="text" required placeholder="הקלידו שם מלא"
+            style="width:100%; box-sizing:border-box; padding:11px 12px; margin-bottom:14px; border:1px solid #d1d5db; border-radius:8px; font-size:15px; font-family:inherit;">
+
+          <label for="email" style="display:block; font-weight:600; margin-bottom:4px; font-size:14px;">אימייל</label>
+          <input id="email" type="email" required placeholder="foo@example.com" dir="ltr"
+            style="width:100%; box-sizing:border-box; padding:11px 12px; margin-bottom:14px; border:1px solid #d1d5db; border-radius:8px; font-size:15px; font-family:inherit; text-align:right;">
+
+          <label for="phone" style="display:block; font-weight:600; margin-bottom:4px; font-size:14px;">טלפון</label>
+          <input id="phone" type="tel" placeholder="050-0000000" dir="ltr"
+            style="width:100%; box-sizing:border-box; padding:11px 12px; margin-bottom:14px; border:1px solid #d1d5db; border-radius:8px; font-size:15px; font-family:inherit; text-align:right;">
+
+          <label for="track" style="display:block; font-weight:600; margin-bottom:4px; font-size:14px;">מסלול לימוד</label>
+          <select id="track" required
+            style="width:100%; box-sizing:border-box; padding:11px 12px; margin-bottom:14px; border:1px solid #d1d5db; border-radius:8px; font-size:15px; font-family:inherit; background-color:#ffffff;">
+            <option value="">בחרו מסלול...</option>
+            <option value="web">פיתוח אתרים</option>
+            <option value="python">תכנות ב-Python</option>
+            <option value="data">ניתוח נתונים</option>
+            <option value="design">עיצוב ממשקים</option>
+          </select>
+
+          <label for="password" style="display:block; font-weight:600; margin-bottom:4px; font-size:14px;">סיסמה</label>
+          <input id="password" type="password" required minlength="6" placeholder="לפחות 6 תווים"
+            style="width:100%; box-sizing:border-box; padding:11px 12px; margin-bottom:14px; border:1px solid #d1d5db; border-radius:8px; font-size:15px; font-family:inherit;">
+
+          <label style="display:flex; align-items:center; gap:8px; font-size:14px; margin-bottom:18px; cursor:pointer;">
+            <input id="terms" type="checkbox" required style="width:17px; height:17px; accent-color:#2b59c3;">
+            קראתי ואני מסכים/ה ל<a href="#" style="color:#2b59c3;">תנאי השימוש</a>
+          </label>
+
+          <div id="formMessage" style="display:none; padding:10px; border-radius:8px; margin-bottom:14px; font-size:14px; text-align:center;"></div>
+
+          <button type="submit"
+            onmouseover="this.style.backgroundColor='#e0951a'" onmouseout="this.style.backgroundColor='#f5a623'"
+            style="width:100%; padding:13px; background-color:#f5a623; color:#ffffff; border:none; border-radius:8px; font-size:17px; font-weight:700; cursor:pointer; font-family:inherit; transition:background-color 0.2s;">
+            הרשמה והתחלת לימוד
+          </button>
+
+          <p style="text-align:center; font-size:14px; margin:14px 0 0 0; color:#6b7280;">
+            כבר רשומים? <a href="#" style="color:#2b59c3; font-weight:600;">התחברות</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- מסלולים -->
+  <section id="courses" style="max-width:1100px; margin:0 auto; padding:60px 20px;">
+    <h2 style="text-align:center; font-size:32px; margin:0 0 10px 0;">מסלולי הלימוד שלנו</h2>
+    <p style="text-align:center; color:#6b7280; margin:0 0 36px 0;">בחרו את התחום שמעניין אתכם והתקדמו שלב אחר שלב</p>
+    <div style="display:flex; flex-wrap:wrap; gap:22px; justify-content:center;">
+      <div style="flex:1 1 230px; max-width:250px; background-color:#ffffff; border-radius:14px; padding:24px; box-shadow:0 4px 14px rgba(0,0,0,0.06); text-align:center;">
+        <div style="font-size:40px;">💻</div>
+        <h3 style="margin:10px 0 6px 0;">פיתוח אתרים</h3>
+        <p style="color:#6b7280; font-size:15px; margin:0;">HTML, CSS ו-JavaScript מהבסיס ועד פרויקט מלא.</p>
+      </div>
+      <div style="flex:1 1 230px; max-width:250px; background-color:#ffffff; border-radius:14px; padding:24px; box-shadow:0 4px 14px rgba(0,0,0,0.06); text-align:center;">
+        <div style="font-size:40px;">🐍</div>
+        <h3 style="margin:10px 0 6px 0;">תכנות ב-Python</h3>
+        <p style="color:#6b7280; font-size:15px; margin:0;">יסודות התכנות, מבני נתונים ואלגוריתמים.</p>
+      </div>
+      <div style="flex:1 1 230px; max-width:250px; background-color:#ffffff; border-radius:14px; padding:24px; box-shadow:0 4px 14px rgba(0,0,0,0.06); text-align:center;">
+        <div style="font-size:40px;">📊</div>
+        <h3 style="margin:10px 0 6px 0;">ניתוח נתונים</h3>
+        <p style="color:#6b7280; font-size:15px; margin:0;">עבודה עם טבלאות, גרפים והסקת מסקנות.</p>
+      </div>
+      <div style="flex:1 1 230px; max-width:250px; background-color:#ffffff; border-radius:14px; padding:24px; box-shadow:0 4px 14px rgba(0,0,0,0.06); text-align:center;">
+        <div style="font-size:40px;">🎨</div>
+        <h3 style="margin:10px 0 6px 0;">עיצוב ממשקים</h3>
+        <p style="color:#6b7280; font-size:15px; margin:0;">עקרונות UI/UX ובניית חוויית משתמש נוחה.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- איך זה עובד -->
+  <section id="how" style="background-color:#ffffff; padding:60px 20px;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="text-align:center; font-size:32px; margin:0 0 36px 0;">איך זה עובד?</h2>
+      <div style="display:flex; flex-wrap:wrap; gap:26px; justify-content:center;">
+        <div style="flex:1 1 220px; max-width:300px; text-align:center;">
+          <div style="width:56px; height:56px; line-height:56px; margin:0 auto 12px; border-radius:50%; background-color:#2b59c3; color:#fff; font-size:24px; font-weight:800;">1</div>
+          <h3 style="margin:0 0 6px 0;">נרשמים</h3>
+          <p style="color:#6b7280; margin:0;">ממלאים טופס קצר ובוחרים מסלול.</p>
+        </div>
+        <div style="flex:1 1 220px; max-width:300px; text-align:center;">
+          <div style="width:56px; height:56px; line-height:56px; margin:0 auto 12px; border-radius:50%; background-color:#2b59c3; color:#fff; font-size:24px; font-weight:800;">2</div>
+          <h3 style="margin:0 0 6px 0;">לומדים</h3>
+          <p style="color:#6b7280; margin:0;">צופים בשיעורים ופותרים תרגילים בקצב אישי.</p>
+        </div>
+        <div style="flex:1 1 220px; max-width:300px; text-align:center;">
+          <div style="width:56px; height:56px; line-height:56px; margin:0 auto 12px; border-radius:50%; background-color:#2b59c3; color:#fff; font-size:24px; font-weight:800;">3</div>
+          <h3 style="margin:0 0 6px 0;">מסיימים</h3>
+          <p style="color:#6b7280; margin:0;">מגישים פרויקט סיום ומקבלים תעודה.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- כותרת תחתונה -->
+  <footer style="background-color:#1f2a44; color:#cbd5e1; text-align:center; padding:24px 20px; font-size:14px;">
+    © 2026 לומדים בקצב שלי · כל הזכויות שמורות
+  </footer>
+
+  <!-- בדיקת תקינות לטופס -->
+  <script>
+    function handleSignup(e) {
+      e.preventDefault();
+      var msg = document.getElementById('formMessage');
+      var name = document.getElementById('fullName').value.trim();
+      var email = document.getElementById('email').value.trim();
+      var track = document.getElementById('track').value;
+      var pass = document.getElementById('password').value;
+      var terms = document.getElementById('terms').checked;
+      var error = '';
+
+      if (name.length < 2) error = 'נא להזין שם מלא';
+      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) error = 'כתובת האימייל אינה תקינה';
+      else if (!track) error = 'נא לבחור מסלול לימוד';
+      else if (pass.length < 6) error = 'הסיסמה חייבת להכיל לפחות 6 תווים';
+      else if (!terms) error = 'יש לאשר את תנאי השימוש';
+
+      msg.style.display = 'block';
+      if (error) {
+        msg.style.backgroundColor = '#fde8e8';
+        msg.style.color = '#b91c1c';
+        msg.textContent = error;
+      } else {
+        msg.style.backgroundColor = '#e6f6ec';
+        msg.style.color = '#15803d';
+        msg.textContent = 'ההרשמה בוצעה בהצלחה! ברוכים הבאים, ' + name;
+        e.target.reset();
+      }
+      return false;
+    }
+  </script>
+</body>
+</html>
